@@ -1,0 +1,52 @@
+>>>>>Project_Creation>>>>>>-----
+COMMANDS:
+cd-current directiory
+ls-list of files
+mkdir-create directory
+exit-to close command prompt
+cd..-go back to directory
+cd/-go to back to home
+
+STEPS TO FOLLOW PROJECT CREATION (TO HOST):
+1.PROJECT DIRECTORY
+2.CREATING VIRTUAL ENVIRONMENT
+3.ACTIVATE ENVIRONMENT
+4.CREATE PROJECT
+5.RUNNING DEVELOPMENT SERVER
+6.DEACTIVATE
+
+PROCESS:
+1> cd desktop
+ mkdir project_name
+ cd project_name
+
+2>python -m venv venv(wait for one sec)#creating different envirnoments for differnt projects to avoid overrid of data
+
+3> venv\scripts\activate
+
+4>for every project we want to install django separately and creating different environments pip install django
+to check django versio django --version
+to create project django-admin startproject projrct_title
+
+5>cd project_title
+
+6>python manage.py runserver
+
+7>deactivate
+
+>>>>>>>>>USER INTERFACE>>>>>>>>>----
+from step-6: TO MANAGE DATABASE ON MODEL
+
+1> python manage.py makemigrations(NOCHANGE)
+
+2>python manage.py migrate(OPERATIONS ARE APPLIED)
+
+3>python manage.py createsuperuser(DETAILS)
+
+4>python manage.py runserver
+
+
+SOME QUESTIONS REGARDING VIRTUAL ENVIRONMENT
+*Each project should have its own, separate virtual environment. Reusing the same virtual environment for multiple projects kind of defeats the whole point of virtual environments.
+When you want to create a new project, you first create a new virtual environment for it. A newly created virtual environment is empty, so you have to install Django into it before you can run django-admin startproject.
+Everytime you want to run an existing project, e.g. with python manage.py runserver, you first have to activate the virtual environment.
