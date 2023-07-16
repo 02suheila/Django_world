@@ -1,0 +1,28 @@
+A Django template is a text document or a Python string marked-up using the Django template language.
+Some constructs are recognized and interpreted by the template engine.
+
+step-1:create template in app  folder
+step-2: in template create a html file
+for exmaple here html file is index.html:
+
+step-3:open html tab rewrite data in html document
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DJANGO_PAGE</title>
+<h1>TEMPLATE OF DJANGO</h1>
+<p>Welcome to my first Django project BYE!</p>
+</body>
+</html>
+
+step-4: change return statement in viewws
+from django.shortcuts import render
+
+from django.http import HttpResponse
+# Create your views here.
+def blue(request):
+    return render(request,"index.html")#"blue/index.html"
+
+OUTPUT OF TEMPLATE IS:
+TEMPLATE OF DJANGO
+Welcome to my first Django project BYE!
