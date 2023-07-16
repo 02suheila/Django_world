@@ -1,0 +1,35 @@
+#WEB APP HOSTING
+#NEWPROJECT-PROJECT_NAME
+#PRO_1-PROJECT TITLE
+#BLUE-APP_NAME
+-----> creating app: py manage.py startapp APPNAME
+AFTER ADMIN PAGE---
+1.go to settings in project title and add ur app :
+    EXTERNAL_APPS=[
+    'app_name' 
+]
+INSTALLED_APPS=INSTALLED_APPS+EXTERNAL_APPS
+
+
+VIEWS: views are used to write logical matter ,where the information exits
+2.go to views in app and add this code:
+from django.shortcuts import render
+
+from django.http import HttpResponse
+# Create your views here.
+def blue(request):
+    return HttpResponse("HEY I AM A DJANGO SERVER")
+    // return HttpResponse("<h1>HEY I AM A DJANGO SERVER</h1>")-we can change the font
+
+URL:it is used for routing the view to website
+3.go to url in project title and this code:
+from django.contrib import admin
+from django.urls import path
+from blue.views import *
+urlpatterns = [
+    
+    path('admin/', admin.site.urls),
+    path('',blue,name="blue"),
+]
+
+ATLAST RUN THE SERVER
