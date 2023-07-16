@@ -1,0 +1,51 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>    MODEL   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+->In every app there is model.py file
+->A model is singlr source of information about data
+->it contains fields and attributes to store data
+->each model is python class
+->model is a table in your database
+->data created in objects
+
+SOME FIELDS IN MODEL:
+string  - models.charfield()
+age     -models.Integerfield()
+email   -models.emailfield()
+address -models.Textfield()
+image   -models.Imagefield()
+date    -models.datefield()
+file    -models.filefield()
+id      -models.autofield()
+
+MODEL.PY FILE:
+from django.db import models
+
+# Create your models here.
+class Student(models.Model):
+    #id=models.autofield()-it gives automatic field
+    #primary key-unique in field
+    
+    name=models.CharField(max_length=50)
+    age=models.IntegerField(default=18)
+    email=models.EmailField(null=True,blank=True)
+    address=models.TextField(null=True,blank=True) 
+    image=models.ImageField()
+    
+https://docs.djangoproject.com/en/4.2/topics/db/models/  -models in django
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MIGRATIONS  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-
+->Migration is a folder in app
+->intially there is no data in migration
+->when we hit(change) some command then migration files are created
+INSTALL SQLITE 
+step-1:open database -no table and data is created
+step-2:run command as py manage.py makemigrations
+it shows model in command prompt
+as:create model student(model_name)
+step-3:open file 0001_initial.py-it has data 2 fields as dependence and operation
+where, dependence contains migrate file
+where,operation contains files of model
+step-4: if we make change in model data ,it gives 0002-initial.py .where we update our data
+python manage.py makemigrations
+step-5:if we make another change ,it gives another updated file
+***********if we delete any migration file it shows data corrupts in database.********************
+OBBSERVATION: at last of database we found our migrations which we updated
