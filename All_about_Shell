@@ -1,0 +1,11 @@
+WHAT IS DJANGO SHELL?
+using shell,we can insert data in model
+STEP-1:python manage.py shell -it gives interactive console to enter data 
+>>from appname.models import *
+>>assign details of student with object
+>>object.save()
+it gives data stored.
+(or)
+variable=student.objects.create()
+here object is model manager
+varaiable.objects.all()
